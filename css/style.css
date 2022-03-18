@@ -1,0 +1,111 @@
+.Display{
+    display: flex;
+    justify-content: space-between;
+}
+.Display li{
+    list-style-type: none;
+    margin-right: 100px;
+}
+.MenuPosition{
+    display: flex;
+    align-items: center;
+}
+.Menu{
+    position: fixed;
+    font-style: italic;
+    color: white;
+    background-color: black;
+    padding-top: 20px;
+    height: 400px;
+    width: 1520px
+}
+A{
+    color: white;
+    text-decoration: none;
+}
+header{
+    font-size: 40px;
+    text-align: center;
+}
+.WhiteMem{
+    margin-left: 25%;
+    margin-right: 25%;
+    margin-top: 100px;
+    display: flex;
+    text-align: center;
+    font-style: italic;
+    color: black;
+    background-color: white;
+    padding-top: 20px;
+    height: 400px;
+}
+.Competencies{
+    text-align: center;
+    font-style: italic;
+    color: white;
+    background-color: black;
+    padding-top: 80px;
+    height: 400px;
+}
+.Competencies li{
+    display: inline-block;
+    margin-right: 140px;
+    margin-left: 140px;
+}
+.CompetenciesText{
+    font-size: 20px;
+    padding-top: 60px;
+}
+.Services{
+    text-align: center;
+    font-style: italic;
+    color: black;
+    background-color: white;
+    padding-top: 20px;
+    height: 400px;
+}
+.ServicesText{
+    margin-top: 100px;
+    margin-right: 250px;
+    margin-left: 250px;
+    display: flex;
+    text-align: left;
+}
+.About{
+    text-align: center;
+    font-style: italic;
+    color: white;
+    background-color: black;
+    padding-top: 20px;
+    height: 400px;
+}
+.AboutText{
+    margin: 80px 250px 100px;
+    text-align: left;
+
+}
+footer {
+    margin-right: 250px;
+    margin-left: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 150px;
+}
+button{
+    height: 200px;
+}
+body{
+    margin: 0px;
+}
+floor{
+    text-align: center;
+    font-style: italic;
+    color: black;
+    background-color: white;
+    padding-top: 20px;
+    height: 400px;
+}
+main{
+    padding-top: 400px;
+}
