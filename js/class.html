@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>html-forms</title>
+    <link rel="stylesheet" href="/css/darkMode.css">
+    <script src="js/script.js"></script>
+    <script>
+        alert("Hi! in head))");
+        document.write("Hi! in head))");
+
+    </script>
+</head>
+<body id="body1">
+<main>
+    <button id="elem2", class="btn-toggle">white</button>
+    <script>
+            elem2.onclick = function add_select (){
+                document.getElementById("body1").classList.toggle("dark-theme");
+                if(document.getElementById("elem2").textContent == "white"){
+                 document.getElementById("elem2").textContent = "dark"
+                } else {document.getElementById("elem2").textContent = "white"}
+            }
+
+    </script>
+</main>
+</body>
