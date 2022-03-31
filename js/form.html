@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function f() {
+            if(document.forms[0].login.value.length>=6){
+            console.log(document.forms[0].login.value);
+            } else {alert("wrong login");}
+            if(document.forms[0].password.value == document.forms[0]._password.value){
+            console.log(document.forms[0].password.value);
+            } else {alert("Passwords aren't equals");}
+            if(document.forms[0].email.value.includes("@uni-dubna.ru")){
+            console.log(document.forms[0].email.value);
+            } else {alert("wrong email");}
+            if(document.forms[0].mailing.checked) {
+                console.log(document.forms[0].mailing.value);
+            } else {alert("Are u sure?");}
+            if(document.forms[0].gender.value != "") {
+            console.log(document.forms[0].gender.value);
+            } else {alert("Choose a gender please!");}
+            let index = document.forms[0].city.selectedIndex;
+            console.log(document.forms[0].city[index].value);
+            console.log(document.forms[0].city[index].text);
+        }
+    </script>
+</head>
+<body>
+<form action="javascript:f()">
+    <div>
+        <label for="login">Введите логин</label>
+        <input type="text" name="login" id="login" pattern="[a-z]+">
+    </div>
+    <div>
+        <label for="password">Введите пароль</label>
+        <input type="password" name="password" id="password">
+        <label for="password">Подтвердите пароль</label>
+        <input type="password" name="_password" id="_password">
+    </div>
+    <div>
+        <label for="email">Введите почту</label>
+        <input type="email" name="email" id="email">
+    </div>
+    <div>
+        <label for="mailing">
+            Подписаться на рассыллку
+            <input type="checkbox" name="mailing" id="mailing" value="123">
+        </label>
+    </div>
+    <div>
+        Пол
+        <label for="m"><input type="radio" name="gender" id="m" value="m">Мужской</label>
+        <label for="w"><input type="radio" name="gender" id="w" value="w">Женский</label>
+    </div>
+    <div>
+        <select name="city" id="city">
+            <option value="дубна">Дубна</option>
+            <option value="москва">Москва</option>
+            <option value="дубна">Дмитров</option>
+        </select>
+    </div>
+
+    <div>
+        <input type="submit" value="отправить">
+        <input type="reset" value="сбросить">
+    </div>
+</form>
+</body>
+</html>
