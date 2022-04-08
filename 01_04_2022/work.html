@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta http-equiv="X-UA-COMPATIBLE" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .big-img
+        {
+            width: 600px;
+        }
+         .small-img
+        {
+            width: 90px;
+            margin-left: 10px;
+        }
+
+        .select-img {
+            border: 1px solid red
+        }
+
+        .LeftButton
+        {
+            margin: 20px;
+        }
+
+        .RightButton
+        {
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <img src="../img/pic1.jpg" class="big-img">
+    <div>
+        <button id="LeftButton">Влево</button>
+        <button id="RightButton">Вправо</button>
+    </div>
+    <div id="small_img">
+
+    </div>
+    <script>
+        let _img;
+
+        //for(i = 1; i<=5; i++){
+        //_img= document.createElement("img");
+        //small_img.append(_img);
+        //_img.className = "small-img";
+        //file_name="../img/pic"+i+".jpg";
+        //_img.setAttribute("src", file_name);
+        //_img.onclick= show;
+        //}
+
+        let j = 1;
+        let count = 3;
+        for (i = j; i < (j + count); i++)
+        {
+            let _img = document.createElement("img");
+            small_img.append(_img);
+            _img.className = "small-img";
+            file_name = "../img/pic" + i + ".jpg";
+            _img.setAttribute("src", file_name);
+            _img.onclick = show;
+        }
+
+        let index=document.images[1];
+        index.classList.add("select-img")
+
+        function show(event) {
+            index.classList.remove("select-img");
+            document.images[0].src=event.target.src;
+            index=event.target;
+            event.target.classList.add("select-img");
+        }
+
+        RightButton.onclick = function(){
+            if (count - j > 0)
+            {
+                let f = 1;
+                j++;
+
+                for (i = j; i < (j + count); i++)
+                {
+                    let _img = document.images[f];
+                    small_img.append(_img);
+                    _img.className = "small-img";
+                    file_name = "../img/pic" + i + ".jpg";
+                    _img.setAttribute("src", file_name);
+                    _img.onclick = show;
+                }
+
+                f++;
+            }
+        }
+
+        LeftButton.onclick = function(){
+            if (j > 1)
+            {
+                let f = 1;
+                j--;
+
+                for (i = j; i < (count + j); i++)
+                {
+                    let _img = document.images[f];
+                    small_img.append(_img);
+                    _img.className = "small-img";
+                    file_name = "../img/pic" + i + ".jpg";
+                    _img.setAttribute("src", file_name);
+                    _img.onclick = show;
+                }
+                f++;
+            }
+        }
+    </script>
+</body>
+</html>
