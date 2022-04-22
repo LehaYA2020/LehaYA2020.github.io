@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="news">
+    <div class="news_back">
+        <h1>First news</h1> <button class="collapseButton">Свернуть</button>
+        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a,</p>
+    </div>
+    <div id = "second" class="news_back">
+        <h1>Second news</h1> <button class="collapseButton">Свернуть</button>
+        <p id="text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a,</p>
+    </div>
+</div>
+<div class="news_back">
+<input id="new_header">
+<input id="new_text">
+<button id="create" onclick="createNew()">Create</button>
+</div>
+</body>
+<script>
+    function createNew() {
+        let _h1 = document.createElement("h1");
+        let _p = document.createElement("p");
+        let _div = document.createElement("div");
+        let _bttn = document.createElement("button");
+        _bttn.classList.toggle("collapseButton")
+        _bttn.innerHTML = "Свернуть";
+        _h1.innerHTML= new_header.value;
+        _p.innerHTML= new_text.value;
+
+        _div.append(_h1);
+        _div.append(_bttn);
+        _div.append(_p);
+        _div.classList.toggle("news_back")
+        news.append(_div);
+    }
+
+        let container = document.querySelector('#news');
+
+        // Click handler for entire DIV container
+        container.addEventListener('click', function (e) {
+        // But only alert for elements that have an alert-button class
+
+            e.target.addEventListener("click", function() {
+                var content = this.nextElementSibling;
+                if (content.style.display === "block") {
+                    content.style.display = "none";
+                    this.innerHTML = "Развернуть";
+                }
+                    else {
+                        content.style.display = "block";
+                        this.innerHTML = "Свернуть";
+                    }
+            });
+
+        });
+
+</script>
+</html>
