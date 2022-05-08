@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body id="body">
+
+<canvas id="canvas" width="500" height="500" style="background: gainsboro"></canvas>
+<div>
+    <input type="text" id="txt">
+    <button onclick="addTextBox()">Создать</button>
+    <button onclick="f()">Rect</button>
+</div>
+<div id="text_boxes">
+
+</div>
+
+<script>
+function addTextBox(){
+text_boxes.innerHTML = "";
+tb = [];
+for(let i = 0; i < txt.value; i++){
+let _input = document.createElement("input");
+text_boxes.append(_input);
+tb[i]=_input;
+_input.setAttribute("value", getRandom(canvas.height))
+}
+draw();
+}
+function getRandom(max){
+return Math.round(Math.random()*max);
+}
+x=0;
+y=canvas.height;
+
+function draw(){
+dx=2;
+w=canvas.width/txt.value-dx;
+let gr = canvas.getContext('2d');
+gr.clearRect(0, 0, canvas.width, canvas.height);
+draw_grid();
+for(i=0;i < txt.value;i++){
+gr.fillStyle = set_color();
+gr.fillRect(x + i*w + dx*i, y, w,-tb[i].value);
+}
+}
+
+function set_color(){
+r=getRandom(256);
+g=getRandom(256);
+b=getRandom(256);
+color = '#'+r.toString(16)+g.toString(16)+b.toString(16);
+return color;
+}
+
+function draw_grid()
+{
+    let g = canvas.getContext("2d");
+    g.strokeStyle=set_color();
+    for(i = 0; i < canvas.height; i++){
+    g.beginPath();
+    g.moveTo(0, 10 * i);
+    g.lineTo(canvas.width, 10 * i);
+    g.stroke();
+    g.closePath();
+}
+}
+
+text_boxes.onchange = draw;
+</script>
+</body>
+</html>
